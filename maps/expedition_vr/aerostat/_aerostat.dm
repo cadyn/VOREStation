@@ -8,10 +8,11 @@
 [i]Habitability[/i]: Low (High Temperature, Toxic Atmosphere)
 [b]Notice[/b]: Planetary environment not suitable for life. Landing may be hazardous."}
 	icon_state = "globe"
-	color = "#dfff3f" //Bright yellow
 	in_space = 0
 	initial_generic_waypoints = list("aerostat_west","aerostat_east","aerostat_south","aerostat_northwest","aerostat_northeast")
 	extra_z_levels = list(Z_LEVEL_AEROSTAT_SURFACE)
+	known = TRUE
+	icon_state = "chlorine"
 
 // -- Datums -- //
 
@@ -136,8 +137,8 @@ VIRGO2_TURF_CREATE(/turf/simulated/mineral)
 
 	var/mineral_name = pickweight(list("marble" = 5, "uranium" = 5, "platinum" = 5, "hematite" = 5, "carbon" = 5, "diamond" = 5, "gold" = 5, "silver" = 5, "lead" = 5, "verdantium" = 5, "rutile" = 10, "copper" = 5, "tin" = 5, "bauxite" = 5))
 
-	if(mineral_name && (mineral_name in ore_data))
-		mineral = ore_data[mineral_name]
+	if(mineral_name && (mineral_name in GLOB.ore_data))
+		mineral = GLOB.ore_data[mineral_name]
 		UpdateMineral()
 	update_icon()
 

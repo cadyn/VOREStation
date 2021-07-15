@@ -4207,7 +4207,7 @@
 /area/hangar/three)
 "aiU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/tiled/monofloor{
+/turf/simulated/floor/tiled/monotile{
 	dir = 1
 	},
 /area/hangar/one)
@@ -4301,7 +4301,7 @@
 /area/maintenance/firstdeck/forestarboard)
 "ajh" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/tiled/monofloor{
+/turf/simulated/floor/tiled/monotile{
 	dir = 1
 	},
 /area/hangar/three)
@@ -4322,7 +4322,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
-/turf/simulated/floor/tiled/monofloor,
+/turf/simulated/floor/tiled/monotile,
 /area/hangar/one)
 "ajk" = (
 /obj/machinery/door/airlock/centcom{
@@ -4335,7 +4335,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
-/turf/simulated/floor/tiled/monofloor,
+/turf/simulated/floor/tiled/monotile,
 /area/hangar/one)
 "ajm" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -4478,14 +4478,14 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
-/turf/simulated/floor/tiled/monofloor,
+/turf/simulated/floor/tiled/monotile,
 /area/hangar/three)
 "ajC" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
-/turf/simulated/floor/tiled/monofloor,
+/turf/simulated/floor/tiled/monotile,
 /area/hangar/three)
 "ajD" = (
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
@@ -18587,7 +18587,7 @@
 	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/tiled/monofloor{
+/turf/simulated/floor/tiled/monotile{
 	dir = 1
 	},
 /area/hangar/two)
@@ -18602,7 +18602,7 @@
 	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/tiled/monofloor{
+/turf/simulated/floor/tiled/monotile{
 	dir = 1
 	},
 /area/hangar/two)
@@ -18776,7 +18776,7 @@
 /area/maintenance/firstdeck/aftstarboard)
 "aKY" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/tiled/monofloor,
+/turf/simulated/floor/tiled/monotile,
 /area/hangar/two)
 "aKZ" = (
 /obj/structure/bed/chair/shuttle,
@@ -66668,10 +66668,6 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/foyer)
 "cvi" = (
-/obj/structure/bed/chair,
-/obj/machinery/alarm{
-	pixel_y = 22
-	},
 /obj/effect/floor_decal/borderfloor/corner{
 	dir = 1
 	},
@@ -70397,6 +70393,10 @@
 	},
 /obj/effect/floor_decal/corner/brown/bordercorner2{
 	dir = 9
+	},
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -22
 	},
 /turf/simulated/floor/tiled,
 /area/quartermaster/foyer)
@@ -86952,9 +86952,9 @@
 /turf/simulated/floor/plating,
 /area/maintenance/bar)
 "deS" = (
-/obj/machinery/smartfridge,
 /obj/structure/disposalpipe/segment,
-/turf/simulated/wall/r_wall,
+/obj/machinery/smartfridge/produce/persistent,
+/turf/simulated/floor/plating,
 /area/hydroponics)
 "deT" = (
 /turf/simulated/wall,
@@ -114220,6 +114220,10 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/stairwell)
+"xjf" = (
+/obj/machinery/smartfridge/sheets/persistent,
+/turf/simulated/floor/plating,
+/area/quartermaster/foyer)
 
 (1,1,1) = {"
 aaa
@@ -201992,7 +201996,7 @@ cmS
 chE
 cpX
 crX
-ctL
+xjf
 cvi
 cxl
 cxl

@@ -16,7 +16,7 @@
 
 	var/speech_bubble_appearance = "normal"					// Part of icon_state to use for speech bubbles when talking.	See talk.dmi for available icons.
 	var/fire_icon_state = "humanoid"						// The icon_state used inside OnFire.dmi for when on fire.
-	var/suit_storage_icon = 'icons/mob/belt_mirror.dmi'		// Icons used for worn items in suit storage slot.
+	var/suit_storage_icon = 'icons/inventory/suit_store/mob.dmi' // Icons used for worn items in suit storage slot.
 
 	// Damage overlay and masks.
 	var/damage_overlays = 'icons/mob/human_races/masks/dam_human.dmi'
@@ -75,7 +75,8 @@
 	var/list/assisted_langs = list(LANGUAGE_EAL, LANGUAGE_SKRELLIAN, LANGUAGE_SKRELLIANFAR, LANGUAGE_ROOTLOCAL, LANGUAGE_ROOTGLOBAL, LANGUAGE_VOX) //VOREStation Edit
 
 	//Soundy emotey things.
-	var/scream_verb = "screams"
+	var/scream_verb_1p = "scream"
+	var/scream_verb_3p = "screams"
 	var/male_scream_sound		//= 'sound/goonstation/voice/male_scream.ogg' Removed due to licensing, replace!
 	var/female_scream_sound		//= 'sound/goonstation/voice/female_scream.ogg' Removed due to licensing, replace!
 	var/male_cough_sounds = list('sound/effects/mob_effects/m_cougha.ogg','sound/effects/mob_effects/m_coughb.ogg', 'sound/effects/mob_effects/m_coughc.ogg')
@@ -271,6 +272,8 @@
 	var/icon_height = 32
 	var/agility = 20 //prob() to do agile things
 
+	var/sort_hint = SPECIES_SORT_NORMAL
+
 /datum/species/proc/update_attack_types()
 	unarmed_attacks = list()
 	for(var/u_type in unarmed_types)
@@ -303,6 +306,14 @@
 		if(!inherent_verbs)
 			inherent_verbs = list()
 		inherent_verbs |= /mob/living/carbon/human/proc/regurgitate
+
+	update_sort_hint()
+
+/datum/species/proc/update_sort_hint()
+	if(spawn_flags & SPECIES_IS_RESTRICTED)
+		sort_hint = SPECIES_SORT_RESTRICTED
+	else if(spawn_flags & SPECIES_IS_WHITELISTED)
+		sort_hint = SPECIES_SORT_WHITELISTED
 
 /datum/species/proc/sanitize_name(var/name, var/robot = 0)
 	return sanitizeName(name, MAX_NAME_LEN, robot)

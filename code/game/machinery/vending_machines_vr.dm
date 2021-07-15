@@ -216,7 +216,7 @@
 					/obj/item/weapon/reagent_containers/food/snacks/sliceable/orangecake = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/sliceable/peanutcake = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/icecreamsandwich = 15,
-					/obj/item/weapon/reagent_containers/food/snacks/cookie = 15,
+					/obj/item/weapon/reagent_containers/food/snacks/cookiesnack = 15,
 					/obj/item/weapon/reagent_containers/food/snacks/sliceable/brownies = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/chocolatebar = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/chocolatepiece = 20
@@ -1004,6 +1004,8 @@
 	premium = list(/obj/item/clothing/under/color/rainbow = 1)
 	contraband = list(/obj/item/clothing/under/rank/clown = 1)
 
+//////////////////START OF CHIPS CO. VENDORS//////////////////
+
 /obj/machinery/vending/loadout/gadget
 	name = "Chips Co."
 	desc = "A special vendor for devices and gadgets."
@@ -1029,7 +1031,11 @@
 					/obj/item/device/radio/headset = 10,
 					/obj/item/device/flashlight = 5,
 					/obj/item/device/laser_pointer = 3,
-					/obj/item/clothing/glasses/omnihud = 10)
+					/obj/item/clothing/glasses/omnihud = 10,
+					/obj/item/device/walkpod = 5,
+					/obj/item/device/juke_remote = 1,
+					/obj/item/instrument/piano_synth/headphones = 2, // You're making a subsystem do work, I don't want it TOO busy
+					/obj/item/instrument/piano_synth/headphones/spacepods = 2)
 	prices = list(/obj/item/clothing/suit/circuitry = 100,
 					/obj/item/clothing/head/circuitry = 100,
 					/obj/item/clothing/shoes/circuitry = 100,
@@ -1049,9 +1055,45 @@
 					/obj/item/device/radio/headset = 50,
 					/obj/item/device/flashlight = 100,
 					/obj/item/device/laser_pointer = 200,
-					/obj/item/clothing/glasses/omnihud = 100)
+					/obj/item/clothing/glasses/omnihud = 100,
+					/obj/item/device/walkpod = 300,
+					/obj/item/device/juke_remote = 1000,
+					/obj/item/instrument/piano_synth/headphones = 200,
+					/obj/item/instrument/piano_synth/headphones/spacepods = 600)
 	premium = list(/obj/item/device/perfect_tele/one_beacon = 1)
 	contraband = list(/obj/item/weapon/disk/nifsoft/compliance = 1)
+
+/obj/machinery/vending/event/gadget //FOR FACILITATING AND EQUIPPING EVENTS, DO NOT PLACE ON THE NORMAL MAP//
+	name = "Chips Co."
+	desc = "A special vendor for devices and gadgets."
+	product_ads = "You can't RESIST our great deals!;Feeling disconnected? We have a gadget for you!;You know you have the capacity to buy our capacitors!;FILL THAT HOLE IN YOUR HEART WITH OUR PLASTIC DISTRACTIONS!!!;Devices for everyone! Chips Co.!;ROBUST INVENTORY, GREAT PRICES! ;DON'T FORGET THE oyPAD 13s PRO! ON SALE NOW, ONLY ONE THOUSAND THALERS!"
+	icon_state = "gadgets"
+	vend_delay = 11
+	products = list(/obj/item/clothing/suit/circuitry = 1,
+					/obj/item/clothing/head/circuitry = 1,
+					/obj/item/clothing/shoes/circuitry = 1,
+					/obj/item/clothing/gloves/circuitry = 1,
+					/obj/item/clothing/under/circuitry = 1,
+					/obj/item/clothing/glasses/circuitry = 1,
+					/obj/item/clothing/ears/circuitry = 1,
+					/obj/item/device/text_to_speech = 5,
+					/obj/item/device/paicard = 5,
+					/obj/item/device/communicator = 10,
+					/obj/item/device/communicator/watch = 10,
+					/obj/item/device/radio = 10,
+					/obj/item/device/camera = 5,
+					/obj/item/device/taperecorder = 5,
+					/obj/item/modular_computer/tablet/preset/custom_loadout/cheap = 5,
+					/obj/item/device/pda = 10,
+					/obj/item/device/radio/headset = 10,
+					/obj/item/device/flashlight = 5,
+					/obj/item/device/laser_pointer = 3,
+					/obj/item/clothing/glasses/omnihud = 10,
+					/obj/item/device/perfect_tele/one_beacon = 1,
+					/obj/item/weapon/disk/nifsoft/compliance = 1,
+					/obj/item/device/perfect_tele/alien = 10)
+
+//////////////////END OF CHIPS CO. VENDORS//////////////////
 
 /obj/machinery/vending/loadout/loadout_misc
 	name = "Bits and Bobs"
@@ -2364,55 +2406,6 @@
 	premium = list(/obj/item/clothing/under/color/rainbow = 1)
 	contraband = list(/obj/item/clothing/under/rank/clown = 1)
 
-/obj/machinery/vending/loadout/gadget
-	name = "Chips Co."
-	desc = "A special vendor for devices and gadgets."
-	product_ads = "You can't RESIST our great deals!;Feeling disconnected? We have a gadget for you!;You know you have the capacity to buy our capacitors!;FILL THAT HOLE IN YOUR HEART WITH OUR PLASTIC DISTRACTIONS!!!;Devices for everyone! Chips Co.!;ROBUST INVENTORY, GREAT PRICES! ;DON'T FORGET THE oyPAD 13s PRO! ON SALE NOW, ONLY ONE THOUSAND THALERS!"
-	icon_state = "gadgets"
-	vend_delay = 11
-	products = list(/obj/item/clothing/suit/circuitry = 1,
-					/obj/item/clothing/head/circuitry = 1,
-					/obj/item/clothing/shoes/circuitry = 1,
-					/obj/item/clothing/gloves/circuitry = 1,
-					/obj/item/clothing/under/circuitry = 1,
-					/obj/item/clothing/glasses/circuitry = 1,
-					/obj/item/clothing/ears/circuitry = 1,
-					/obj/item/device/text_to_speech = 5,
-					/obj/item/device/paicard = 5,
-					/obj/item/device/communicator = 10,
-					/obj/item/device/communicator/watch = 10,
-					/obj/item/device/radio = 10,
-					/obj/item/device/camera = 5,
-					/obj/item/device/taperecorder = 5,
-					/obj/item/modular_computer/tablet/preset/custom_loadout/cheap = 5,
-					/obj/item/device/pda = 10,
-					/obj/item/device/radio/headset = 10,
-					/obj/item/device/flashlight = 5,
-					/obj/item/device/laser_pointer = 3,
-					/obj/item/clothing/glasses/omnihud = 10)
-	prices = list(/obj/item/clothing/suit/circuitry = 100,
-					/obj/item/clothing/head/circuitry = 100,
-					/obj/item/clothing/shoes/circuitry = 100,
-					/obj/item/clothing/gloves/circuitry = 100,
-					/obj/item/clothing/under/circuitry = 100,
-					/obj/item/clothing/glasses/circuitry = 100,
-					/obj/item/clothing/ears/circuitry = 100,
-					/obj/item/device/text_to_speech = 300,
-					/obj/item/device/paicard = 100,
-					/obj/item/device/communicator = 100,
-					/obj/item/device/communicator/watch = 100,
-					/obj/item/device/radio = 100,
-					/obj/item/device/camera = 100,
-					/obj/item/device/taperecorder = 100,
-					/obj/item/modular_computer/tablet/preset/custom_loadout/cheap = 1000,
-					/obj/item/device/pda = 50,
-					/obj/item/device/radio/headset = 50,
-					/obj/item/device/flashlight = 100,
-					/obj/item/device/laser_pointer = 200,
-					/obj/item/clothing/glasses/omnihud = 100)
-	premium = list(/obj/item/device/perfect_tele/one_beacon = 1)
-	contraband = list(/obj/item/weapon/disk/nifsoft/compliance = 1)
-
 /obj/machinery/vending/loadout/loadout_misc
 	name = "Bits and Bobs"
 	desc = "A special vendor for things and also stuff!"
@@ -3350,36 +3343,6 @@
 					/obj/item/clothing/under/color/rainbow = 1,
 					/obj/item/clothing/under/rank/clown = 1)
 
-/obj/machinery/vending/event/gadget //FOR FACILITATING AND EQUIPPING EVENTS, DO NOT PLACE ON THE NORMAL MAP//
-	name = "Chips Co."
-	desc = "A special vendor for devices and gadgets."
-	product_ads = "You can't RESIST our great deals!;Feeling disconnected? We have a gadget for you!;You know you have the capacity to buy our capacitors!;FILL THAT HOLE IN YOUR HEART WITH OUR PLASTIC DISTRACTIONS!!!;Devices for everyone! Chips Co.!;ROBUST INVENTORY, GREAT PRICES! ;DON'T FORGET THE oyPAD 13s PRO! ON SALE NOW, ONLY ONE THOUSAND THALERS!"
-	icon_state = "gadgets"
-	vend_delay = 11
-	products = list(/obj/item/clothing/suit/circuitry = 1,
-					/obj/item/clothing/head/circuitry = 1,
-					/obj/item/clothing/shoes/circuitry = 1,
-					/obj/item/clothing/gloves/circuitry = 1,
-					/obj/item/clothing/under/circuitry = 1,
-					/obj/item/clothing/glasses/circuitry = 1,
-					/obj/item/clothing/ears/circuitry = 1,
-					/obj/item/device/text_to_speech = 5,
-					/obj/item/device/paicard = 5,
-					/obj/item/device/communicator = 10,
-					/obj/item/device/communicator/watch = 10,
-					/obj/item/device/radio = 10,
-					/obj/item/device/camera = 5,
-					/obj/item/device/taperecorder = 5,
-					/obj/item/modular_computer/tablet/preset/custom_loadout/cheap = 5,
-					/obj/item/device/pda = 10,
-					/obj/item/device/radio/headset = 10,
-					/obj/item/device/flashlight = 5,
-					/obj/item/device/laser_pointer = 3,
-					/obj/item/clothing/glasses/omnihud = 10,
-					/obj/item/device/perfect_tele/one_beacon = 1,
-					/obj/item/weapon/disk/nifsoft/compliance = 1,
-					/obj/item/device/perfect_tele/alien = 10)
-
 /obj/machinery/vending/event/loadout_misc //FOR FACILITATING AND EQUIPPING EVENTS, DO NOT PLACE ON THE NORMAL MAP//
 	name = "Bits and Bobs"
 	desc = "A special vendor for things and also stuff!"
@@ -3761,7 +3724,6 @@
 					/obj/item/weapon/reagent_containers/food/snacks/clownburger = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/clownstears = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/coldchili = 10,
-					/obj/item/weapon/reagent_containers/food/snacks/cookie = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/cookiesnack = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/corn_dog = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/cosmicbrowniesslice = 10,
@@ -3788,10 +3750,28 @@
 					/obj/item/weapon/reagent_containers/food/snacks/donerkebab = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/donkpocket = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/donkpocket/sinpocket = 10,
-					/obj/item/weapon/reagent_containers/food/snacks/donut = 10,
-					/obj/item/weapon/reagent_containers/food/snacks/donut/cherryjelly = 10,
-					/obj/item/weapon/reagent_containers/food/snacks/donut/jelly = 10,
-					/obj/item/weapon/reagent_containers/food/snacks/donut/normal = 10,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/plain = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/plain/jelly = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/pink = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/pink/jelly = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/purple = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/purple/jelly = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/green = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/green/jelly = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/beige = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/beige/jelly = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/choc = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/choc/jelly = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/blue = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/blue/jelly = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/yellow = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/yellow/jelly = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/olive = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/olive/jelly = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/homer = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/homer/jelly = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/choc_sprinkles = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/choc_sprinkles/jelly = 2,
 					/obj/item/weapon/reagent_containers/food/snacks/egg_pancake = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/eggbowl = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/eggplantparm = 10,
@@ -3837,7 +3817,6 @@
 					/obj/item/weapon/reagent_containers/food/snacks/jellysandwich = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/jellysandwich/cherry = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/jellysandwich/peanutbutter = 10,
-					/obj/item/weapon/reagent_containers/food/snacks/kabob = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/keylimepieslice = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/keylimepieslice/filled = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/kitsuneudon = 10,
@@ -3978,7 +3957,7 @@
 					/obj/item/weapon/reagent_containers/food/snacks/soydope = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/soylentgreen = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/soylenviridians = 10,
-					/obj/item/weapon/reagent_containers/food/snacks/spacetwinkie = 10,
+					/obj/item/weapon/reagent_containers/food/snacks/packaged/spacetwinkie = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/spesslaw = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/spreads = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/spreads/butter = 10,
@@ -4024,10 +4003,10 @@
 					/obj/item/weapon/reagent_containers/food/snacks/brainburger = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/chaoscakeslice = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/donut/chaos = 10,
-					/obj/item/weapon/reagent_containers/food/snacks/donut/poisonberry = 10,
-					/obj/item/weapon/reagent_containers/food/snacks/donut/slimejelly = 10,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/plain/jelly/poisonberry = 10,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/plain/jelly/slimejelly = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/ghostmuffin/poison = 10,
-					/obj/item/weapon/reagent_containers/food/snacks/hotdog/old = 10,
+					/obj/item/weapon/reagent_containers/food/snacks/old/hotdog = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/hugemushroomslice = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/human/burger = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/human/kabob = 10,
@@ -4095,7 +4074,7 @@
 					/obj/item/weapon/reagent_containers/food/snacks/pineapple_ring = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/rawbacon = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/rawsunflower = 10,
-					/obj/item/weapon/reagent_containers/food/snacks/sharkmeat = 10,
+					/obj/item/weapon/reagent_containers/food/snacks/carpmeat/fish/sharkmeat = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/sliceable/birthdaycake = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/sliceable/cheesewheel = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/sliceable/monkfish = 10,
@@ -4103,7 +4082,10 @@
 					/obj/item/weapon/reagent_containers/food/snacks/sliceable/sharkchunk = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/spagetti = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/xenomeat = 10,
-					/obj/item/weapon/reagent_containers/food/snacks/xenomeat/spidermeat = 10)
+					/obj/item/weapon/reagent_containers/food/snacks/xenomeat/spidermeat = 10,
+					/obj/item/weapon/reagent_containers/food/snacks/vendor_burger = 10,
+					/obj/item/weapon/reagent_containers/food/snacks/vendor_hotdog = 10,
+					/obj/item/weapon/reagent_containers/food/snacks/vendor_burrito = 10)
 	vend_delay = 15
 
 /obj/machinery/vending/event/food/safe //FOR FACILITATING/OUTFITTING EVENTS, DO NOT PUT THESE ON THE MAP//
@@ -4225,7 +4207,6 @@
 					/obj/item/weapon/reagent_containers/food/snacks/clownburger = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/clownstears = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/coldchili = 10,
-					/obj/item/weapon/reagent_containers/food/snacks/cookie = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/cookiesnack = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/corn_dog = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/cosmicbrowniesslice = 10,
@@ -4252,10 +4233,28 @@
 					/obj/item/weapon/reagent_containers/food/snacks/donerkebab = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/donkpocket = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/donkpocket/sinpocket = 10,
-					/obj/item/weapon/reagent_containers/food/snacks/donut = 10,
-					/obj/item/weapon/reagent_containers/food/snacks/donut/cherryjelly = 10,
-					/obj/item/weapon/reagent_containers/food/snacks/donut/jelly = 10,
-					/obj/item/weapon/reagent_containers/food/snacks/donut/normal = 10,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/plain = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/plain/jelly = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/pink = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/pink/jelly = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/purple = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/purple/jelly = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/green = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/green/jelly = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/beige = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/beige/jelly = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/choc = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/choc/jelly = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/blue = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/blue/jelly = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/yellow = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/yellow/jelly = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/olive = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/olive/jelly = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/homer = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/homer/jelly = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/choc_sprinkles = 2,
+					/obj/item/weapon/reagent_containers/food/snacks/donut/choc_sprinkles/jelly = 2,
 					/obj/item/weapon/reagent_containers/food/snacks/egg_pancake = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/eggbowl = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/eggplantparm = 10,
@@ -4301,7 +4300,6 @@
 					/obj/item/weapon/reagent_containers/food/snacks/jellysandwich = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/jellysandwich/cherry = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/jellysandwich/peanutbutter = 10,
-					/obj/item/weapon/reagent_containers/food/snacks/kabob = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/keylimepieslice = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/keylimepieslice/filled = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/kitsuneudon = 10,
@@ -4442,7 +4440,7 @@
 					/obj/item/weapon/reagent_containers/food/snacks/soydope = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/soylentgreen = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/soylenviridians = 10,
-					/obj/item/weapon/reagent_containers/food/snacks/spacetwinkie = 10,
+					/obj/item/weapon/reagent_containers/food/snacks/packaged/spacetwinkie = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/spesslaw = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/spreads = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/spreads/butter = 10,
@@ -4478,7 +4476,10 @@
 					/obj/item/weapon/reagent_containers/food/snacks/wingfangchu = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/wishsoup = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/yellowcurry = 10,
-					/obj/item/weapon/reagent_containers/food/snacks/zestfish = 10)
+					/obj/item/weapon/reagent_containers/food/snacks/zestfish = 10,
+					/obj/item/weapon/reagent_containers/food/snacks/vendor_burger = 10,
+					/obj/item/weapon/reagent_containers/food/snacks/vendor_hotdog = 10,
+					/obj/item/weapon/reagent_containers/food/snacks/vendor_burrito = 10)
 	vend_delay = 15
 
 /obj/machinery/vending/event/food/ingredients //FOR FACILITATING/OUTFITTING EVENTS, DO NOT PUT THESE ON THE MAP//
@@ -4528,7 +4529,7 @@
 					/obj/item/weapon/reagent_containers/food/snacks/pineapple_ring = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/rawbacon = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/rawsunflower = 10,
-					/obj/item/weapon/reagent_containers/food/snacks/sharkmeat = 10,
+					/obj/item/weapon/reagent_containers/food/snacks/carpmeat/fish/sharkmeat = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/sliceable/birthdaycake = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/sliceable/cheesewheel = 10,
 					/obj/item/weapon/reagent_containers/food/snacks/sliceable/monkfish = 10,
@@ -4614,3 +4615,36 @@
 /obj/machinery/vending/cola/soft
 	icon = 'icons/obj/vending_vr.dmi'
 	icon_state = "Cola_Machine"
+
+//////////////////////Bepis Drinks (04/29/2021)//////////////////////
+
+/obj/machinery/vending/bepis
+	name = "Bepis Softdrinks"
+	desc = "A strange softdrink vendor that isn't owned by NanoTrasen... Why (and how) is it here?"
+	icon = 'icons/obj/vending_vr.dmi'
+	icon_state = "bepis"
+	product_slogans = "Refreshing!;Have a sip, you won't believe the taste!;Puts the 'B' in Best Soda!"
+	product_ads = "Refreshing!;Hope you're thirsty!;Please, have a drink!;Drink up!"
+	products = list(/obj/item/weapon/reagent_containers/food/drinks/cans/bepis = 10,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/astrodew = 10,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/buzz = 10,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/shambler = 10,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/cranberry = 10,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/icecoffee = 10,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/iced_tea = 10,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/grape_juice = 10,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/gingerale = 10,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/root_beer = 10)
+
+	prices = list(/obj/item/weapon/reagent_containers/food/drinks/cans/bepis = 1,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/astrodew = 1,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/buzz = 1,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/shambler = 1,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/cranberry = 1,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/icecoffee = 1,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/iced_tea = 1,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/grape_juice = 1,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/gingerale = 1,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/root_beer = 1)
+	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
+	vending_sound = "machines/vending/vending_cans.ogg"
